@@ -8,7 +8,7 @@ const logger = require("./conf/logger");
 
 const routerUtils = require("./utils/routerUtils");
 
-const auth = require("./router/authRoute");
+const history = require("./router/history");
 
 mongo.connect();
 
@@ -34,7 +34,7 @@ app.all('*', function (req, res, next) {
     }
 });
 
-app.use("/users", auth);
+app.use("/history", history);
 
 app.listen(port, () => {
     console.log(`🤖 Application running in: ${env}`)
