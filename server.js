@@ -9,6 +9,7 @@ const logger = require("./conf/logger");
 const routerUtils = require("./utils/routerUtils");
 
 const history = require("./router/history");
+const english = require("./router/english");
 
 mongo.connect();
 
@@ -35,6 +36,7 @@ app.all('*', function (req, res, next) {
 });
 
 app.use("/history", history);
+app.use("/english", english);
 
 app.listen(port, () => {
     console.log(`🤖 Application running in: ${env}`)
